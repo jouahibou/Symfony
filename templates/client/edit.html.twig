@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Client
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 style="text-align: center;">Modifier Client</h1>
+
+
+		{{ include('client/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+	</div>
+{% endblock %}

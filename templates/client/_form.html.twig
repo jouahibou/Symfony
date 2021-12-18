@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn btn-primary " style="">{{ button_label|default('Enregistrer') }}</button>
+<a href="{{ path('client_index') }}">retour</a>
+{{ form_end(form) }}

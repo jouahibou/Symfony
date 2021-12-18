@@ -1,0 +1,40 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Liste des utilisateurs
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des utilisateurs</h1>
+
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Username</th>
+				<th>Role</th>
+
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td>{{ user.username }}</td>
+					<td>{{ user.role }}</td>
+					<td>
+						<a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-info">show</a>
+						<a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-warning">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="8">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('user_new') }}" class="btn btn-success">Create new</a>
+
+{% endblock %}
